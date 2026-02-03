@@ -1,4 +1,4 @@
-load("//bazel:mongo_src_rules.bzl", "mongo_cc_library", "mongo_cc_test", "mongo_cc_benchmark")
+load("//bazel:mongo_src_rules.bzl", "mongo_cc_benchmark", "mongo_cc_library", "mongo_cc_unit_test")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -18,44 +18,40 @@ mongo_cc_library(
         "uniform_array.h",
     ],
     deps = [
-        "//src/mongo/bson:bson",
-        "//src/mongo/base:base",
+        "//src/mongo:base",
     ],
 )
 
 # BOON Unit Tests
-mongo_cc_test(
+mongo_cc_unit_test(
     name = "boon_test",
     srcs = [
         "boon_test.cpp",
     ],
     deps = [
         ":boon",
-        "//src/mongo/unittest:unittest",
     ],
 )
 
 # UniformArray Tests
-mongo_cc_test(
+mongo_cc_unit_test(
     name = "uniform_array_test",
     srcs = [
         "uniform_array_test.cpp",
     ],
     deps = [
         ":boon",
-        "//src/mongo/unittest:unittest",
     ],
 )
 
 # BSON-BOON Converter Tests
-mongo_cc_test(
+mongo_cc_unit_test(
     name = "bson_boon_converter_test",
     srcs = [
         "bson_boon_converter_test.cpp",
     ],
     deps = [
         ":boon",
-        "//src/mongo/unittest:unittest",
     ],
 )
 
