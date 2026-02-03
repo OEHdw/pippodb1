@@ -37,6 +37,11 @@ src/mongo/**/*_mock*
 src/mongo/**/*_bm*
 src/mongo/tools/mongo_tidy_checks/**
 modules_poc/**
+
+# BOON Project - MongoDB with BOON format
+src/mongo/boon/**
+src/mongo/bson/**
+src/mongo/db/storage/boon/**
 ```
 
 ### Pattern Matching Examples:
